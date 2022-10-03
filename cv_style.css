@@ -1,0 +1,44 @@
+body{
+    background-color: lightgray;
+    background-image:'zirafa.jpg';
+}
+#heder{
+    text-align:center;
+    clear:both;
+    background-color:orange;
+    width:100%;
+}
+#left{
+    width:calc(30% - 2px);
+    background-color:rgb(197, 91, 21);
+    height:700px;
+    float:left;
+    margin-right:2px;
+    text-align:center;
+}
+#right{
+    width:70%;
+    background-color:rgb(24, 189, 24);
+    height:700px;
+    float:left;
+}
+img{
+    border: 5px solid rgba(240, 112, 212, 0.966);
+}
+span.ime{
+    color:rgb(93, 255, 93);
+    font-size:large;
+    font-family:'Arial';
+    font-weight:bold;
+}
+.naslov{
+    text-decoration:underline
+}
+.odjeljak{
+    background-color:rgb(233, 143, 158);
+    padding-top:3px;
+    padding-bottom:3px;
+    text-transform: uppercase;
+    padding-left:10px;
+    text-decoration:underline;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZADATAK</title>
+</head>
+<body>
+    <script>
+
+        // Q - ukupno naelektrisanje prstena
+        // R - poluprecnik prstena
+        // s - udaljenost tacke A od centra prstena
+        // fi - ugao izmedu s i pozitivnog smjera ose x
+        // n - broj koji predstavlja na koliko dijelova se funkcija dijeli tj. sto je n vece, preciznija je aproksimacija
+
+        function rjesenje(Q,R,s,fi) {
+            //Integral mozemo rijesiti preko numericke integracije trapezoidnim pravilom (aproksimacije)
+
+            
+            const k = 9 * Math.pow(10,9)            // Kulonova konstanta
+            const lambda = Q / (2 * Math.PI * R)    // Poduzna gustina naelektrisanja
+
+            //Granice integrala
+            let b = 2 * Math.PI;
+            let a = 0;
+            let p = -534.141592;                    // p - prilagodba domeni funkcije
+
+            let n = 50000;
+
+            //Prvo cemo naci x - komponentu elektricnog polja, Ex
+
+            let deltaX = (b - a) / n;
+
+            let sumX = 0;
+            
+            for(i = 0; i <= n; i++){
+                
+                let fiPrim = a + i * deltaX;
+
+                let brojnik = R* (s * Math.cos(fi * Math.PI / 180) - R * Math.cos(fiPrim * Math.PI / 180));
+                let nazivnik = Math.pow((Math.pow(s,2) + Math.pow(R,2) - 2 * s * R * Math.cos((fi - fiPrim) * Math.PI / 180)),1.5);
+                
+                sumX += i === 0 || i === n ? brojnik / nazivnik : 2 * brojnik / nazivnik
+            
+            } 
+
+            let rjesenje_Za_X_Komponentu_El_Polja = k * lambda * (deltaX / 2) * sumX;
+
+            //Zatim cemo naci y - komponentu elektricnog polja, Ey
+
+            let sumY = 0;
+            
+            for(i = 0; i <= n; i++){
+                
+                let fiPrim = a + i * deltaX;
+
+                let brojnik = R * (s * Math.sin(fi * Math.PI / 180) - R * Math.sin(fiPrim * Math.PI / 180));
+                let nazivnik = Math.pow((Math.pow(s,2) + Math.pow(R,2) - 2 * s * R * Math.cos((fi - fiPrim) * Math.PI / 180)),1.5);
+                
+                sumY += i === 0 || i === n ? brojnik / nazivnik : 2 * brojnik / nazivnik
+            
+            } 
+
+            let rjesenje_Za_Y_Komponentu_El_Polja = k * lambda * (deltaX / 2) * sumY;
+
+            let finalRjesenje = Math.sqrt(Math.pow(rjesenje_Za_X_Komponentu_El_Polja,2) + Math.pow(rjesenje_Za_Y_Komponentu_El_Polja,2))
+
+            console.log(rjesenje_Za_Y_Komponentu_El_Polja);
+            console.log(rjesenje_Za_X_Komponentu_El_Polja);
+            console.log(finalRjesenje);
+}
+
+        rjesenje(1, 1, 5, 90);
+    </script>
+</body>
+</html>

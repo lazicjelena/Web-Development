@@ -1,0 +1,19 @@
+#lista{
+    list-style-type: square;
+}
+#tabela{
+    border-color: indigo;
+    border-width: 2px;
+    border-style: solid;
+    border-spacing: 0px;
+}
+td {
+    border-color: indigo;
+    border-width: 2px;
+    border-style: solid;
+    border-spacing: 0px;
+    background-color: rgb(248, 141, 177);
+}
+#slova{
+    text-transform: capitalize;
+}

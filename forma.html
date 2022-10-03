@@ -1,0 +1,128 @@
+<html>
+    <head>
+        <title>
+            Forma
+        </title>
+    </head>
+    <body>
+        <h2 align='center'>Moji podaci</h2>
+        <form>
+            <fieldset disabled> 
+                <legend>Licni podaci</legend>
+                JMBG : <input type='text' name='jmbg'>
+            </fieldset>
+            <table>
+                <tr>
+                    <td>
+                        Ime: 
+                    </td>
+                    <td>
+                        <input type='text' name='ime' size='15' maxlength='15'
+                         value='' placeholder='Unesite ime' required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Prezime:
+                    </td>
+                    <td>
+                        <input type='text' name='prezime' size='15' maxlength='20' 
+                        value='' placeholder="Unesite prezime" required >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Pristupni kod:
+                    </td>
+                    <td>
+                        <input type='password' autofocus>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan='2' align='center'>
+                        <input type='button' value='Dugme'>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan='2' align='center'>
+                        <input type='submit' value='Posalji'>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan='2' align='center'>
+                        <input type='reset' value='Izbrisi'>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Pol:
+                    </td>
+                    <td>
+                        <input id='m' type='radio' name='Pol' value='Musko'><label for='m'>Musko</label>
+                        <input id='z' type='radio' name='Pol' value='Zensko'><label for='z'>Zensko</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Tehnologije koje poznajemo:
+                    </td>
+                    <td>
+                        <input type='checkbox' name='teh' value='Java'>Java
+                        <input type='checkbox' name='teh' value='PHP' checked>PHP
+                        <input type='checkbox' name='teh' value='C#'>C#
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Stepen obrazovanja:
+                    </td>
+                    <td>
+                        <select multiple size='1'>
+                            <option>Srednji nivo</option>
+                            <option selected>Visi nivo - Osnovne studije</option>
+                            <option>Visi nivo - Master sudije</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nesto o sebi:</td>
+                    <td>
+                        <textarea rows='5' cols='50' name='o nama'></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan='2'>
+                        <input type='hidden' name='skriveno' value='moje polje'>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Boje:</td>
+                    <td>
+                        <input type='color' name='boja' >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Datum rodjenja:
+                    </td>
+                    <td>
+                        <input type='date' min='2020-10-20'>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Vrijeme rodjenja:
+                    </td>
+                    <td>
+                        <input type='time'>
+                    </td>
+                </tr>
+                <tr><td>Flekibilnost :</td>
+                    <td>
+                    <input type='range' min='0' max='5' name='fleksibilnost radnog vremena'>
+                </td>
+            </tr>
+            </table>
+        </form>
+    </body>
+</html>
